@@ -6,13 +6,13 @@
 /*   By: xale <xale@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 00:08:19 by xale              #+#    #+#             */
-/*   Updated: 2023/08/25 00:09:48 by xale             ###   ########.fr       */
+/*   Updated: 2023/08/26 11:12:43 by xale             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    ft_memset(s, 0, n);
+	ft_memset(s, 0, n);
 }
