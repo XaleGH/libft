@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xale <xale@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 23:39:01 by xale              #+#    #+#             */
-/*   Updated: 2023/08/23 23:39:01 by xale             ###   ########.fr       */
+/*   Created: 2023/10/02 11:55:18 by asaux             #+#    #+#             */
+/*   Updated: 2023/10/02 11:56:49 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    return (c >= 32 && c < 127);
+	return (c >= 32 && c < 127);
 }

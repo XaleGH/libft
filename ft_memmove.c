@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 15:45:08 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/04 16:12:05 by asaux            ###   ########.fr       */
+/*   Created: 2023/10/04 15:17:12 by asaux             #+#    #+#             */
+/*   Updated: 2023/10/08 17:47:48 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int	i;
+	char	*d;
+	char	*s;
 
-	i = 0;
-	if (!src && !dest)
+	if (!dest && !src)
 		return (0);
-	while (i < n)
+	d = (char *)dest;
+	s = (char *)src;
+	if (d < s)
 	{
-		((char *) dest)[i] = ((char *) src)[i];
-		i++;
+		while (n-- >= 0)
+			*d++ = *s++;
+	}
+	else
+	{
+		d = d + n - 1;
+		s = s + n - 1;
+		while (n-- >= 0)
+			*d-- = *s--;
 	}
 	return (dest);
 }

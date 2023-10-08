@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 15:45:08 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/04 16:12:05 by asaux            ###   ########.fr       */
+/*   Created: 2023/10/04 13:31:04 by asaux             #+#    #+#             */
+/*   Updated: 2023/10/08 17:53:46 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	i;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	k;
+	char			*sc;
 
 	i = 0;
-	if (!src && !dest)
-		return (0);
-	while (i < n)
-	{
-		((char *) dest)[i] = ((char *) src)[i];
+	j = 0;
+	k = 0;
+	sc = (char *) src;
+	while (dst[i] != '\0' && i < size)
 		i++;
+	while (sc[j] != '\0')
+		j++;
+	if (i != size)
+	{
+		while (sc[k] && i + k < size - 1)
+		{
+			dst[i + k] = sc[k];
+			k++;
+		}
+		dst[i + k] = '\0';
 	}
-	return (dest);
+	return (i + j);
 }

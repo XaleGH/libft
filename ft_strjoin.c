@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 15:45:08 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/04 16:12:05 by asaux            ###   ########.fr       */
+/*   Created: 2023/10/08 16:59:43 by asaux             #+#    #+#             */
+/*   Updated: 2023/10/08 17:38:54 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	char	*str;
+	int		i;
+	int		j;
 
+	i = ft_strlen(s1);
+	j = ft_strlen(s2);
+	str = malloc(sizeof (char) * (i + j + 1));
+	if (!str)
+		return (NULL);
 	i = 0;
-	if (!src && !dest)
-		return (0);
-	while (i < n)
+	while (s1)
 	{
-		((char *) dest)[i] = ((char *) src)[i];
+		str[i] = s1[i];
 		i++;
 	}
-	return (dest);
+	j = 0;
+	while (s2)
+	{
+		str[i + j] = s2[j];
+		j++;
+	}
+	str[i + j] = '\0';
+	return (str);
 }

@@ -1,35 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 12:19:55 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/08 19:30:29 by asaux            ###   ########.fr       */
+/*   Created: 2023/10/08 17:00:51 by asaux             #+#    #+#             */
+/*   Updated: 2023/10/08 17:56:42 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+static int	is_set(char c, char *set)
 {
 	int	i;
-	int	sign;
-	int	res;
 
 	i = 0;
-	sign = 1;
-	res = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	while (set)
 	{
-		if (str[i] == '-')
-			sign = sign + -1;
+		if (set[i] == c)
+			return (1);
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-		res = res * 10 + str[i] - '0';
-	return (res * sign);
+	return (0);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	int		i;
+	int		j;
+	int		k;
+	char	*str;
+
+	i = 0;
+	j = ft_strlen(s1);
+	while (is_set(s1[i], set))
+		i++;
+	while (is_set(s1[j], set))
+		j--;
+	str = malloc(sizeof (char) * (j - i + 1));
+	if (!str)
+		return (NULL);
+	k = 0;
+	while (s1[i] && i <= j)
+	{
+		str[k] = s1[i];
+		k++;
+		i++;
+	}
+	str[k] = '\0';
+	return (str);
 }
