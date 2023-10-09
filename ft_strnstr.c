@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 10:58:36 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/08 17:55:53 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/09 11:02:56 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	b = (char *) big;
 	l = (char *) little;
 	i = 0;
-	if (l == '\0')
+	if (!l)
 		return (b);
-	while (b[i] && i < len)
+	while (b[i] && i < (int) len)
 	{
 		k = 0;
-		while (b[i + k] == l[k] && i + k < len)
+		while (b[i + k] == l[k] && i + k < (int) len)
 		{
 			if (l[k] == '\0')
-				return (b[i]);
+				return (b + i);
 			k++;
 		}
 		i++;

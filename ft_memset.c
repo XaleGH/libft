@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 13:22:05 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/08 17:48:25 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/09 17:01:06 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,16 @@
 void	*ft_memset(void *s, int c, size_t n)
 {
 	char	*ptr;
+	int		i;
 
+	i = 0;
 	ptr = (char *) s;
 	while (n > 0)
 	{
-		*ptr = (char) c;
-		*ptr++;
+		ptr[i] = (char) c;
+		i++;
 		n--;
 	}
 	return (s);
 }
+

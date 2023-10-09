@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 17:02:12 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/08 17:57:01 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/09 11:14:54 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	int		i;
 
 	i = 0;
-	if (start > ft_strlen(s))
+	if ((int) start > ft_strlen((char *) s))
 		return (0);
-	while (s[start] && i < len)
+	sub = malloc (sizeof (char) * (len - start + 1));
+	if (!sub)
+		return (NULL);
+	while (s[start] && i < (int) len)
 	{
 		sub[i] = s[start];
 		i++;

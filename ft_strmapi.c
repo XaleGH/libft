@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 17:37:13 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/08 18:15:30 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/09 11:15:30 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*tab;
 	int		i;
 
-	i = ft_strlen(s);
+	i = ft_strlen((char *) s);
 	tab = malloc (sizeof (char) * (i + 1));
 	if (!tab)
 		return (NULL);

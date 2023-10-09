@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:18:59 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/08 17:41:51 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/09 13:55:08 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ char	*ft_itoa(int n)
 	char		*tab;
 
 	save = n;
+	unit = 0;
 	if (n < 0)
 		save = save * -1;
 	unit = count_unit(save, unit, n);
@@ -49,3 +50,12 @@ char	*ft_itoa(int n)
 		tab[--unit] = '-';
 	return (tab);
 }
+/*
+int	main(void)
+{
+	char *f = ft_itoa(-2147483648);
+	char *s = ft_itoa(2147483647);
+	char *d = ft_itoa(0);
+	printf("%s : %s : %s\n", f, s ,d);
+	return (0);
+}*/

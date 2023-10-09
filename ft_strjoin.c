@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:59:43 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/08 17:38:54 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/09 10:59:25 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		j;
 
-	i = ft_strlen(s1);
-	j = ft_strlen(s2);
+	i = ft_strlen((char *) s1);
+	j = ft_strlen((char *) s2);
 	str = malloc(sizeof (char) * (i + j + 1));
 	if (!str)
 		return (NULL);

@@ -6,11 +6,11 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 12:13:55 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/08 17:06:42 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/09 12:40:50 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

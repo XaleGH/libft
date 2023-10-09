@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:13:36 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/08 17:44:23 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/09 10:48:18 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	char	*b;
 
 	i = 0;
-	b = (unsigned char *) s;
+	b = (char *) s;
 	while (b[i] && n > 0)
 	{
 		if (b[i] == c)
