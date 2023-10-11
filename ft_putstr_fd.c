@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:53:57 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/08 17:19:43 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/10 11:42:10 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,10 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
+/*
+int	main(void)
+{
+	char *s = "Hello World";
+	ft_putstr_fd(s, 1);
+	return (0);
+}*/

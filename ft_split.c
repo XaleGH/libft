@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:57:12 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/08 17:51:47 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/10 14:42:23 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,3 +94,20 @@ char	**ft_split(char const *s, char c)
 	tab[k] = NULL;
 	return (tab);
 }
+/*int	main(void)
+{
+	int	i;
+
+	i = 0;
+	char **recup;
+	char *s = "    Hello ici on   coupe cette  phrase    ";
+	recup = ft_split(s, ' ');
+	while (recup[i])
+	{
+		printf("%s\n", recup[i]);
+		free(recup[i]);
+		i++;
+	}
+	free(recup);
+	return(0);
+}*/

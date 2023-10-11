@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 10:13:27 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/08 17:52:29 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/11 16:19:58 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,16 @@ char	*ft_strchr(const char *s, int c)
 			return (b + i);
 		i++;
 	}
+	if (b[i] == c)
+		return (b + i);
 	return (NULL);
 }
+/*int	main(void)
+{
+	char str[] = "Hello world";
+	char *recup;
+
+	recup = ft_strchr(str, 'w');
+	printf("%s", recup);
+	return (0);
+}*/

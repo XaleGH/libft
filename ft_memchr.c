@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:13:36 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/09 10:48:18 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/11 15:58:59 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		i++;
 		n--;
 	}
+	if (c == '\0')
+		return (b + i);
 	return (NULL);
 }

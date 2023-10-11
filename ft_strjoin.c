@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:59:43 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/09 10:59:25 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/11 18:29:55 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (s1)
+	while (s1[i])
 	{
 		str[i] = s1[i];
 		i++;
 	}
 	j = 0;
-	while (s2)
+	while (s2[j])
 	{
 		str[i + j] = s2[j];
 		j++;

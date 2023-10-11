@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 15:17:12 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/09 10:54:50 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/11 14:15:04 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	s = (char *)src;
 	if (d < s)
 	{
-		while ((int) n-- >= 0)
+		while (n--)
 			*d++ = *s++;
 	}
 	else
 	{
 		d = d + n - 1;
 		s = s + n - 1;
-		while ((int) n-- >= 0)
+		while (n--)
 			*d-- = *s--;
 	}
 	return (dest);

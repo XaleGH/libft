@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 17:00:51 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/09 11:04:26 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/11 18:27:01 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	is_set(char c, char *set)
 	int	i;
 
 	i = 0;
-	while (set)
+	while (set[i])
 	{
 		if (set[i] == c)
 			return (1);
