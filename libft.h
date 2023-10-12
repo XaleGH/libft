@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 17:28:06 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/08 18:18:09 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/12 13:09:31 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ft_isascii(int c);
 
 int		ft_isprint(int c);
 
-int		ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 
 int		ft_atoi(char *str);
 

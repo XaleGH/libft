@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 17:00:51 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/11 18:27:01 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/12 14:52:06 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,29 +26,46 @@ static int	is_set(char c, char *set)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+static size_t	count_set(char const *s1, char const *set)
 {
-	int		i;
-	int		j;
-	int		k;
-	char	*str;
+	int	i;
+	int	j;
 
 	i = 0;
-	j = ft_strlen((char *) s1);
-	while (is_set(s1[i], (char *) set))
+	j = 0;
+	while (is_set(s1[i], (char *) set) && s1[i])
+	{
+		j++;
 		i++;
-	while (is_set(s1[j], (char *) set))
-		j--;
-	str = malloc(sizeof (char) * (j - i + 1));
+	}
+	i = ft_strlen(s1);
+	if (j != i)
+	{
+		while (i > 0 && is_set(s1[--i], (char *) set))
+			j++;
+	}
+	return (j);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	int				i;
+	unsigned int	k;
+	char			*str;
+
+	i = 0;
+	if (!set)
+		return ((char *) s1);
+	if (count_set(s1, set) == ft_strlen(s1) || !s1)
+		return (ft_strdup(""));
+	str = malloc(sizeof (char) * ((ft_strlen(s1) - count_set(s1, set)) + 1));
 	if (!str)
 		return (NULL);
 	k = 0;
-	while (s1[i] && i <= j)
-	{
-		str[k] = s1[i];
-		k++;
+	while (s1[i] && is_set(s1[i], (char *) set))
 		i++;
-	}
+	while (s1[i] && k < (ft_strlen(s1) - count_set(s1, set)))
+		str[k++] = s1[i++];
 	str[k] = '\0';
 	return (str);
 }
