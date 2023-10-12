@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:23:30 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/11 16:27:42 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/12 16:01:07 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	b = (unsigned char *) s1;
 	c = (unsigned char *) s2;
-	while ((b[i] || (c[i])) && n-- > 0)
+	while (n-- > 0)
 	{
 		if (b[i] != c[i])
 			return (b[i] - c[i]);
