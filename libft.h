@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 17:28:06 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/16 11:36:07 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/16 14:45:13 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 t_list	*ft_lstnew(void *content);
 
 void	ft_lstadd_front(t_list **lst, t_list *new);
+
+int		ft_lstsize(t_list *lst);
+
+t_list	*ft_lstlast(t_list *lst);
 
 #endif
