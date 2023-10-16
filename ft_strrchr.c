@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 10:22:29 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/11 16:21:50 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/16 10:45:48 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ char	*ft_strrchr(const char *s, int c)
 
 	b = (char *)s;
 	i = ft_strlen(b);
+	if ((char) c == '\0')
+		return (b + ft_strlen(s));
 	while (i >= 0)
 	{
-		if (b[i] == c)
+		if (b[i] == (char) c)
 			return (b + i);
 		i--;
 	}

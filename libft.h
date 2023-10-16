@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 17:28:06 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/12 13:09:31 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/12 16:08:51 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		ft_isprint(int c);
 
 size_t	ft_strlen(const char *str);
 
-int		ft_atoi(char *str);
+int		ft_atoi(const char *nptr);
 
 int		ft_toupper(int c);
 
