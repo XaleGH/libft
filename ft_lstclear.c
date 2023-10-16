@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:35:49 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/16 15:46:45 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/16 16:20:32 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*l;
 
-	l = *lst;
-	if (!*lst || !del)
+	if (!*lst)
 		return ;
 	while (l)
 	{
-		(*del)(l->content);
-		free(l);
-		l = l->next;
+		l = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		(*lst) = l;
 	}
 }
