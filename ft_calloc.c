@@ -6,7 +6,7 @@
 /*   By: asaux <asaux@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 12:58:25 by asaux             #+#    #+#             */
-/*   Updated: 2023/10/11 16:11:26 by asaux            ###   ########.fr       */
+/*   Updated: 2023/10/23 15:56:34 by asaux            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*str;
 
 	if (!nmemb || !size)
-		return (malloc(1));
+		return (malloc(0));
 	if ((nmemb * size) > 2147483647)
 		return (0);
 	str = malloc(nmemb * size);
